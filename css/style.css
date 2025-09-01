@@ -1,0 +1,164 @@
+/* Modal de confirmación */
+.modal-confirm {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+.modal-confirm.active {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.modal-actions button {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  /* background: #db4938; */
+  color: #fff;
+  transition: background 0.2s;
+}
+.modal-actions button:hover {
+  background: #a83224;
+}
+#btnModalNoDelete {
+  background: #db4938;
+}
+#btnModalSiDelete{
+  background: #2d8d40;
+}
+#btnModalNoEdit {
+  background: #db4938;
+}
+#btnModalSiEdit{
+  background: #2d8d40;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 80%;
+  margin-top: 30px;
+}
+
+h1 {
+  background: #145d7a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#iptTarea {
+  width: 60%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  background: #9ecadc;
+  color: #32314a;
+  text-align: center;
+  font-size: 16px;
+}
+
+#btnAgregar {
+  background: #145d7a;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#btnEnviar:hover {
+  background: #0e3f54;
+}
+
+.listaTareas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tarea {
+  background: #9ecadc;
+  color: #32314a;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  border: #0e3f54 solid 1px;
+  margin-bottom:5px;
+}
+*{
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+main{
+  text-align: center;
+  width:80%;
+}
+#lblTarea{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.btnEliminar{
+  background: #a92c2c;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  border: #0e3f54 solid 1px;
+  margin-right: 3px;
+
+}
+.btnEditar{
+  background: #2c68a9;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  border: #0e3f54 solid 1px;
+  margin-right: 3px;
+}
