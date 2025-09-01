@@ -18,7 +18,7 @@ function procesarPendientes() {
 
   const promesas = pendientes.map(op => {
     if (op.tipo === "POST") {
-      return fetch("https://10e85c328c5f.ngrok-free.app/tareas", {
+      return fetch("https://f77b786697d6.ngrok-free.app/tareas", {
         method: "POST",
         headers: { "Content-Type": "application/json","ngrok-skip-browser-warning": "true" },
         body: JSON.stringify({ descripcion: op.descripcion })
@@ -34,7 +34,7 @@ function procesarPendientes() {
 
     if (op.tipo === "DELETE") {
       const idReal = mapaIds[op.id] || op.id;
-      return fetch(`https://10e85c328c5f.ngrok-free.app/tareas/${idReal}`, 
+      return fetch(`https://f77b786697d6.ngrok-free.app/tareas/${idReal}`, 
         { method: "DELETE",
             headers: { "Content-Type": "application/json",
                 "ngrok-skip-browser-warning": "true"
@@ -44,7 +44,7 @@ function procesarPendientes() {
 
     if (op.tipo === "PUT") {
       const idReal = mapaIds[op.id] || op.id;
-      return fetch(`https://10e85c328c5f.ngrok-free.app/tareas/${idReal}`, {
+      return fetch(`https://f77b786697d6.ngrok-free.app/tareas/${idReal}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" },
         body: JSON.stringify({ descripcion: op.descripcion })
@@ -126,7 +126,7 @@ function cargarTareas() {
     return;
   }
 
-  fetch("https://10e85c328c5f.ngrok-free.app/tareas", { headers: { "ngrok-skip-browser-warning": "true","Content-Type":"application/json" } })
+  fetch("https://f77b786697d6.ngrok-free.app/tareas", { headers: { "ngrok-skip-browser-warning": "true","Content-Type":"application/json" } })
     .then(res => res.json())
     .then(arrTareas => {
       localStorage.setItem("tareas", JSON.stringify(arrTareas));
@@ -148,7 +148,7 @@ function agregarTarea(descripcion) {
     return;
   }
 
-  fetch("https://10e85c328c5f.ngrok-free.app/tareas", {
+  fetch("https://f77b786697d6.ngrok-free.app/tareas", {
     method: "POST",
     headers: { "ngrok-skip-browser-warning": "true", "Content-Type":"application/json" },
     body: JSON.stringify({ descripcion })
@@ -158,12 +158,12 @@ function agregarTarea(descripcion) {
 }
 
 function eliminarTarea(id) {
-  fetch(`https://10e85c328c5f.ngrok-free.app/tareas/${id}`, { method: "DELETE", headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" } })
+  fetch(`https://f77b786697d6.ngrok-free.app/tareas/${id}`, { method: "DELETE", headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" } })
     .then(() => cargarTareas());
 }
 
 function editarTarea(id, descripcion) {
-  fetch(`https://10e85c328c5f.ngrok-free.app/tareas/${id}`, {
+  fetch(`https://f77b786697d6.ngrok-free.app/tareas/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true", "Content-Type":"application/json" },
     body: JSON.stringify({ descripcion })
